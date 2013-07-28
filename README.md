@@ -10,7 +10,7 @@
 
     hub clone joshnuss/ruby-jquery-example
     cd ruby-jquery-example
-    gem install webruby haml coffeescript tiltd
+    bundle
     rake # build webruby.js
     tiltd # start dev server to serve assets
 
