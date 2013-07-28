@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title Example
+    %script{src: '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'}  
+    %script{src: 'build/webruby.js'}
+
+    :coffeescript
+      jQuery ->
+        webruby = new WEBRUBY(print_level: 2)
+        webruby.run()
+
+        $('body').append('<p>Hello from Javascript!</p>')
+
+        webruby.run_source($('script[type="text/x-webruby"]').text());
+
+    %script{type: 'text/x-webruby'}
+      j('body').append '<p>Hello from Ruby! (interpreted)</p>'
+
+  %body
+    %h1 Ruby/jQuery Example
+
+    %p Hello from HTML!
